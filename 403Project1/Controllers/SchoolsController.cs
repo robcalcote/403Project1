@@ -11,17 +11,25 @@ namespace _403Project1.Controllers
         // GET: Schools
         public ActionResult Index()
         {
-            var schoolsList = new SelectList(new[]
-            {
-                new { ID = "1", Name = "Orem" },
-                new { ID = "2", Name = "Riverton" },
-                new { ID = "3", Name = "Gilbert" },
-            }, "ID", "Name", 1);
-
-            ViewData["list"] = schoolsList;
-
-
             // returns view
+            return View();
+        }
+
+        // Will Return Lehi View
+        public ActionResult Lehi()
+        {
+            return View();
+        }
+
+        // Will Return Riverton View
+        public ActionResult Riverton()
+        {
+            return View();
+        }
+
+        // Will Return Gilbert View
+        public ActionResult Gilbert()
+        {
             return View();
         }
     }
