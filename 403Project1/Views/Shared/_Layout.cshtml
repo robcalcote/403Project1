@@ -20,6 +20,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">See FAQ's for our schools</button>
+                            <div class="dropdown-content">
+                                <a href="@Url.Action("Lehi", "Schools")">Lehi FAQ's</a>
+                                <a href="@Url.Action("Riverton", "Schools")">Riverton FAQ's</a>
+                                <a href="@Url.Action("Gilbert", "Schools")">Gilbert FAQ's</a>
+                            </div>
+                        </div>
+                    </li>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Enroll", "Index", "Contact")</li>
