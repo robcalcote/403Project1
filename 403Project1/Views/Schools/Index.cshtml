@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>W3.CSS</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">See FAQ's for our schools</button>
+        <div class="dropdown-content">
+            <a href="@Url.Action("Lehi", "Schools")">Lehi FAQ's</a>
+            <a href="@Url.Action("Riverton", "Schools")">Riverton FAQ's</a>
+            <a href="@Url.Action("Gilbert", "Schools")">Gilbert FAQ's</a>
+        </div>
+    </div>
+</body>
+</html>
