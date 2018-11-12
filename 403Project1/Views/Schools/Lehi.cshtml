@@ -1,18 +1,129 @@
-﻿
+﻿@model _403Project1.Models.FAQ
+
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Lehi</title>
 </head>
 <body>
-    <div> 
-        Lehi
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li class="breadcrumb-item"><a href="@Url.Action("Index","Schools")">Location</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lehi</li>
+        </ol>
+    </nav>
+    <div>
+        <h2>School Facts</h2>
+        <table class="table">
+            <tr class="table-primary">
+                <td>school name</td>
+                <td>@ViewBag.School</td>
+            </tr>
+            <tr class="table-secondary">
+                <td>School directors name</td>
+                <td>@ViewBag.Director</td>
+            </tr>
+            <tr class="table-success">
+                <td>school address</td>
+                <td>@ViewBag.Address</td>
+            </tr>
+            <tr class="table-danger">
+                <td>Enrollment</td>
+                <td>@ViewBag.Enrollment</td>
+            </tr>
+        </table>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Frequently Asked Questions</h1>
+            <p><b>Will my Child learn to read?</b></p>
+            <p>Yes! That is the ultimate goal an we have a 98% success rate.</p>
+            @if (ViewBag.Respond == "1")
+            {
+                using (Html.BeginForm())
+                {
+                    <!--Anti Forgery-->
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <p>Name:     @Html.TextBoxFor(x => x.Name)</p>
+                    <p>Response: @Html.TextAreaFor(x => x.Question)</p>
+                    <input type="submit" value="Submit Response" />
+                }
+            }
+
+            @if (ViewBag.Respond != "1")
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Lehi", "Schools", new { respond = 1 })">Respond &raquo;</a></p>
+            }
+
+            <br />
+            <p><b>How do I pick my child up from school?</b></p>
+            <p>We have a designated parent pick up roundabout that students will line up at to meet their parents at the end of each day</p>
+            @if (ViewBag.Respond == "2")
+            {
+                using (Html.BeginForm())
+                {
+                    <!--Anti Forgery-->
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <p>Name:     @Html.TextBoxFor(x => x.Name)</p>
+                    <p>Response: @Html.TextAreaFor(x => x.Question)</p>
+                    <input type="submit" value="Submit Response" />
+                }
+            }
+
+            @if (ViewBag.Respond != "2")
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Lehi", "Schools", new { respond = 2 })">Respond &raquo;</a></p>
+            }
+            <br />
+            <p><b>Are school lunches prvided?</b></p>
+            <p>No. Each mild must bring his or her own lunch to school.</p>
+            @if (ViewBag.Respond == "3")
+            {
+                using (Html.BeginForm())
+                {
+                    <!--Anti Forgery-->
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    <p>Name:     @Html.TextBoxFor(x => x.Name)</p>
+                    <p>Response: @Html.TextAreaFor(x => x.Question)</p>
+                    <input type="submit" value="Submit Response" />
+                }
+            }
+
+            @if (ViewBag.Respond != "3")
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Lehi", "Schools", new { respond = 3 })">Respond &raquo;</a></p>
+            }
+        </div>
+        <div class="col-md-6">
+            <img src="https://grohost3.com/~launchin/04_Client/3679/CMSImg/2016-09-08-T220958r859.jpg" height="200" />
+            <h1>New Question</h1>
+            <!--HTML form-->
+            @using (Html.BeginForm())
+            {
+                <!--Anti Forgery-->
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                <p>Name:     @Html.TextBoxFor(x => x.Name)</p>
+                <p>Location: @Html.TextBoxFor(x => x.Location)</p>
+                <p>Question: @Html.TextAreaFor(x => x.Question)</p>
+                <input type="submit" value="Submit Question" />
+            }
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-8">
+
+        </div>
+    </div>
+
 </body>
 </html>
