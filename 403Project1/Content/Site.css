@@ -24,7 +24,7 @@ textarea {
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #FF0800;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -61,5 +61,19 @@ textarea {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #FF0800;
+}
+
+.navbar-color {
+    background-color: #FF0800;
+    border-color: #FF0800;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-family: inherit;
 }
