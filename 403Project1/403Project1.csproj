@@ -158,6 +158,10 @@
     </Compile>
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\FAQ.cs" />
+    <Compile Include="Models\Parent.cs" />
+    <Compile Include="Models\School.cs" />
+    <Compile Include="Models\SchoolQuestion.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
