@@ -19,6 +19,7 @@ namespace _403Project1.Controllers
         // Will Return Lehi View
         public ActionResult Lehi(string respond)
         {
+
             ViewBag.School = "Lehi Leopards";
             ViewBag.Director = "John Smith";
             ViewBag.Address = "500 NW 340 SE";

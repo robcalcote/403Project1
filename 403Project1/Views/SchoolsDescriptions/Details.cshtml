@@ -1,0 +1,66 @@
+﻿@model _403Project1.Models.School
+
+@{
+  //  ViewBag.Title = "School Details";
+}
+
+
+
+<div>
+    <h2>School Details</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolZIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolZIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DirectorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DirectorName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  
+    @Html.ActionLink("Home", "Index", "Home")
+</p>

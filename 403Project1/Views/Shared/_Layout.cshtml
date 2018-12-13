@@ -17,24 +17,30 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="~/Home/Index">
-                    <img alt="Brand" src="~/Content/Photos/LearningDynamicsLogo.jpg"  height="60" style="padding:3px,0px,0px,15px">
+                    <img alt="Brand" src="~/Content/Photos/LearningDynamicsLogo.jpg"  height="30" style="padding:3px,0px,0px,15px">
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Home/Index'">
-                Home</button>
+                    Home
+                </button>
                 <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Home/About'">
-                About</button>
+                    About
+                </button>
                 <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Contact/Index'">
-                Enroll</button>            
+                    Enroll
+                </button>
                 <div class="dropdown">
-                    <button class=" btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;">See FAQ's for our schools</button>
+                    <button class=" btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;">School Details</button>
                     <div class="dropdown-content">
-                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Lehi", "Schools")">Lehi</a>
-                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Riverton", "Schools")">Riverton</a>
-                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Gilbert", "Schools")">Gilbert</a>
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Details", "SchoolsDescriptions", new { id = 1 })">Lehi</a>
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Details", "SchoolsDescriptions", new { id = 2 })">Riverton</a>
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Details", "SchoolsDescriptions", new { id = 3 })">Gilbert</a>
                     </div>
                 </div>
+                <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Contact/Index'">
+                    FAQs
+                </button>
                 <!-- Anchored to the right-side of the navbar -->
                 <div class="pull-right nav navbar-nav" style="font-family:Bahnschrift; font-weight:500">
                     <button class="btn btn-primary" type="button" style="padding:0px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Login/Logout'">
