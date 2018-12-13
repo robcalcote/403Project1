@@ -1,0 +1,53 @@
+﻿@model _403Project1.Models.Parent
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Login</legend>
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PFirstName) <br />
+            @Html.ValidationMessageFor(model => model.PFirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.TextBoxFor(model => model.PFirstName)
+        </div>
+
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PLastName) <br />
+            @Html.ValidationMessageFor(model => model.PLastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.TextBoxFor(model => model.PLastName)
+        </div>
+
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PEmail) <br />
+            @Html.ValidationMessageFor(model => model.PEmail, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.TextBoxFor(model => model.PEmail)
+        </div>
+
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PLogin) <br />
+            @Html.ValidationMessageFor(model => model.PLogin, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.PasswordFor(model => model.PLogin)
+        </div>
+
+        <input type="submit" value="Submit" />
+
+    </fieldset>
+}
+
+<h2>Don't have an account?</h2>
+<button onclick="@Url.Action("Create", "Parents")" class="btn btn-block">Create New Account</button>
+

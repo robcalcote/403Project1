@@ -152,12 +152,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
+    <Compile Include="DAL\LearningDynamicsContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\Parent.cs" />
     <Compile Include="Models\School.cs" />
     <Compile Include="Models\SchoolQuestion.cs" />
@@ -210,6 +210,12 @@
     <Content Include="Views\Schools\Riverton.cshtml" />
     <Content Include="Views\Schools\Gilbert.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Parents\Create.cshtml" />
+    <Content Include="Views\Parents\Delete.cshtml" />
+    <Content Include="Views\Parents\Details.cshtml" />
+    <Content Include="Views\Parents\Edit.cshtml" />
+    <Content Include="Views\Parents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
