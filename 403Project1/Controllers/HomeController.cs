@@ -12,13 +12,14 @@ namespace _403Project1.Controllers
 {
     public class HomeController : Controller
     {
-        private LearningDynamicsContext db = new LearningDynamicsContext();
+        LearningDynamicsContext db = new LearningDynamicsContext();
 
         public ActionResult Index()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -41,22 +42,23 @@ namespace _403Project1.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(FormCollection form, [Bind(Include = "PEmail,PLogin")] Parent newparent, bool rememberMe = false)
+        public ActionResult Login(FormCollection form, [Bind(Include = "ParentID,PEmail,PLogin")] Parent newparent, bool rememberMe = false)
         {
+            Parent parent = db.Parents.SingleOrDefault(i => i.PEmail == newparent.PEmail);
+
             string password = newparent.PLogin;
-            if (db.Parents.Find(newparent.PEmail) != null)
+            if (parent != null)
             {
-                if (db.Parents.Find(newparent.PEmail).PLogin == password)
+                if (parent.PLogin == newparent.PLogin)
                 {
                     FormsAuthentication.SetAuthCookie(newparent.PEmail, rememberMe);
                     return View("Index");
                 }
             }
-
+            ViewBag.Error = "Sorry your Username or Password was incorrect.";
             return View();
         }
+        
 
-        
-        
     }
 }
