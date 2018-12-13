@@ -214,17 +214,20 @@
     <Content Include="Views\Schools\Riverton.cshtml" />
     <Content Include="Views\Schools\Gilbert.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\SchoolsDescriptions\Create.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Delete.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Details.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Edit.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Index.cshtml" />
+=======
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Parents\Create.cshtml" />
     <Content Include="Views\Parents\Delete.cshtml" />
     <Content Include="Views\Parents\Details.cshtml" />
     <Content Include="Views\Parents\Edit.cshtml" />
     <Content Include="Views\Parents\Index.cshtml" />
+>>>>>>> mustard
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
