@@ -16,6 +16,9 @@
   </appSettings>
   <connectionStrings>
     <add name="LearningDynamicsContext" 
+<<<<<<< HEAD
+         connectionString="Data Source=isbyu.database.windows.net;Initial Catalog=LearningDynamics;User ID=robcalcote;Password=Admin123;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+=======
          connectionString="Data Source=isbyu.database.windows.net;
                            Initial Catalog=LearningDynamics;
                            User ID=robcalcote;
@@ -25,6 +28,7 @@
                            TrustServerCertificate=False;
                            ApplicationIntent=ReadWrite;
                            MultiSubnetFailover=False"
+>>>>>>> 4344ae47aaf0ba394516781dfbeb26f18133e942
          providerName="System.Data.SqlClient" />
   </connectionStrings>
   <system.web>

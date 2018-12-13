@@ -16,24 +16,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Learning Dynamics", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="~/Home/Index">
+                    <img alt="Brand" src="~/Content/Photos/LearningDynamicsLogo.jpg"  height="60" style="padding:3px,0px,0px,15px">
+                </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-text-color">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Enroll", "Index", "Contact")</li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn">See FAQ's for our schools</button>
-                            <div class="dropdown-content">
-                                <a href="@Url.Action("Lehi", "Schools")">Lehi</a>
-                                <a href="@Url.Action("Riverton", "Schools")">Riverton</a>
-                                <a href="@Url.Action("Gilbert", "Schools")">Gilbert</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Home/Index'">
+                Home</button>
+                <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Home/About'">
+                About</button>
+                <button class="btn btn-primary" type="button" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Contact/Index'">
+                Enroll</button>            
+                <div class="dropdown">
+                    <button class=" btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="padding:5px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;">See FAQ's for our schools</button>
+                    <div class="dropdown-content">
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Lehi", "Schools")">Lehi</a>
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Riverton", "Schools")">Riverton</a>
+                        <a style="font-family:Bahnschrift;font-size:larger;font-weight:500" href="@Url.Action("Gilbert", "Schools")">Gilbert</a>
+                    </div>
+                </div>
+                <!-- Anchored to the right-side of the navbar -->
+                <div class="pull-right nav navbar-nav" style="font-family:Bahnschrift; font-weight:500">
+                    <button class="btn btn-primary" type="button" style="padding:0px,0px,0px,15px;margin:8px;font-family:Bahnschrift;font-size:larger;font-weight:500;" onclick="location.href='/Login/Logout'">
+                        <!-- Login and Register button -->
+                        Login/Register
+                    </button>
+                </div>
             </div>
         </div>
     </div>
