@@ -156,6 +156,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
+    <Compile Include="Controllers\SchoolQuestionsController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="DAL\LearningDynamicsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,6 +226,11 @@
     <Content Include="Views\Parents\Details.cshtml" />
     <Content Include="Views\Parents\Edit.cshtml" />
     <Content Include="Views\Parents\Index.cshtml" />
+    <Content Include="Views\SchoolQuestions\Create.cshtml" />
+    <Content Include="Views\SchoolQuestions\Delete.cshtml" />
+    <Content Include="Views\SchoolQuestions\Details.cshtml" />
+    <Content Include="Views\SchoolQuestions\Edit.cshtml" />
+    <Content Include="Views\SchoolQuestions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

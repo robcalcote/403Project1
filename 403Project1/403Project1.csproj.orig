@@ -155,7 +155,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\ParentsController.cs" />
+=======
+    <Compile Include="Controllers\SchoolQuestionsController.cs" />
+>>>>>>> rob
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="DAL\LearningDynamicsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,14 +224,19 @@
     <Content Include="Views\SchoolsDescriptions\Details.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Edit.cshtml" />
     <Content Include="Views\SchoolsDescriptions\Index.cshtml" />
-=======
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Parents\Create.cshtml" />
     <Content Include="Views\Parents\Delete.cshtml" />
     <Content Include="Views\Parents\Details.cshtml" />
     <Content Include="Views\Parents\Edit.cshtml" />
     <Content Include="Views\Parents\Index.cshtml" />
->>>>>>> mustard
+=======
+    <Content Include="Views\SchoolQuestions\Create.cshtml" />
+    <Content Include="Views\SchoolQuestions\Delete.cshtml" />
+    <Content Include="Views\SchoolQuestions\Details.cshtml" />
+    <Content Include="Views\SchoolQuestions\Edit.cshtml" />
+    <Content Include="Views\SchoolQuestions\Index.cshtml" />
+>>>>>>> rob
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
