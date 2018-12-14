@@ -11,6 +11,8 @@ using _403Project1.Models;
 
 namespace _403Project1.Controllers
 {
+
+    // EVERYTHING TO DO WITH ASKING QUESTIONS ABOUT THE SCHOOLS
     public class SchoolQuestionsController : Controller
     {
         private LearningDynamicsContext db = new LearningDynamicsContext();

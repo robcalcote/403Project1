@@ -12,6 +12,7 @@ using System.Web.Security;
 
 namespace _403Project1.Controllers
 {
+    // EVERYTHING TO DO WITH PARENTS
     public class ParentsController : Controller
     {
         private LearningDynamicsContext db = new LearningDynamicsContext();
