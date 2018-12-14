@@ -26,8 +26,7 @@ namespace _403Project1.Controllers
 
             return View();
         }
-
-        [Authorize]
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

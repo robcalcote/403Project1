@@ -20,7 +20,7 @@ namespace _403Project1
         {
           
 
-            return View(db.School.ToList());
+            return View(db.Schools.ToList());
         }
 
         // GET: SchoolsDescriptions/Details/5
@@ -30,7 +30,7 @@ namespace _403Project1
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.School.Find(id);
+            School school = db.Schools.Find(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace _403Project1
         {
             if (ModelState.IsValid)
             {
-                db.School.Add(school);
+                db.Schools.Add(school);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -68,7 +68,7 @@ namespace _403Project1
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.School.Find(id);
+            School school = db.Schools.Find(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -99,7 +99,7 @@ namespace _403Project1
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.School.Find(id);
+            School school = db.Schools.Find(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -112,8 +112,8 @@ namespace _403Project1
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            School school = db.School.Find(id);
-            db.School.Remove(school);
+            School school = db.Schools.Find(id);
+            db.Schools.Remove(school);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
