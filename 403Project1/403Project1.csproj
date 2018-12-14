@@ -176,8 +176,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Mystyles.css" />
     <Content Include="Content\Photos\LearningDynamicsLogo.jpg" />
+    <Content Include="Content\Photos\preschool-kids-for-website-2.png" />
+    <Content Include="Content\Photos\survival-guide.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Photos\preschool.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
