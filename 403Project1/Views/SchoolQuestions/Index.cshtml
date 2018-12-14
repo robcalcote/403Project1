@@ -1,0 +1,59 @@
+﻿@model IEnumerable<_403Project1.Models.SchoolQuestion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <button class="btn btn-primary" 
+            type="button" 
+            style="padding:5px,0px,0px,15px;
+                   margin:8px;
+                   font-family:Bahnschrift;
+                   font-size:larger;
+                   font-weight:500;" 
+            onclick="location.href='/SchoolQuestions/Create'">
+        Ask New Question
+    </button>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.parent.PFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.school.SchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.parent.PFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.school.SchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Question)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Answer)
+        </td>
+        <td>
+            @Html.ActionLink("Update Answer", "Edit", new { id=item.QuestionID })
+
+        </td>
+    </tr>
+}
+
+</table>
