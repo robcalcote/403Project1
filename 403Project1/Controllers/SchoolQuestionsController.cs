@@ -40,8 +40,8 @@ namespace _403Project1.Controllers
         // GET: SchoolQuestions/Create
         public ActionResult Create()
         {
-            ViewBag.ParentID = new SelectList(db.Parent, "ParentID", "PFirstName");
-            ViewBag.SchoolID = new SelectList(db.School, "SchoolID", "SchoolName");
+            ViewBag.ParentID = new SelectList(db.Parents, "ParentID", "PFirstName");
+            ViewBag.SchoolID = new SelectList(db.Schools, "SchoolID", "SchoolName");
             return View();
         }
 
@@ -59,8 +59,8 @@ namespace _403Project1.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ParentID = new SelectList(db.Parent, "ParentID", "PFirstName", schoolQuestion.ParentID);
-            ViewBag.SchoolID = new SelectList(db.School, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
+            ViewBag.ParentID = new SelectList(db.Parents, "ParentID", "PFirstName", schoolQuestion.ParentID);
+            ViewBag.SchoolID = new SelectList(db.Schools, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
             return View(schoolQuestion);
         }
 
@@ -76,8 +76,8 @@ namespace _403Project1.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ParentID = new SelectList(db.Parent, "ParentID", "PFirstName", schoolQuestion.ParentID);
-            ViewBag.SchoolID = new SelectList(db.School, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
+            ViewBag.ParentID = new SelectList(db.Parents, "ParentID", "PFirstName", schoolQuestion.ParentID);
+            ViewBag.SchoolID = new SelectList(db.Schools, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
             return View(schoolQuestion);
         }
 
@@ -94,8 +94,8 @@ namespace _403Project1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ParentID = new SelectList(db.Parent, "ParentID", "PFirstName", schoolQuestion.ParentID);
-            ViewBag.SchoolID = new SelectList(db.School, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
+            ViewBag.ParentID = new SelectList(db.Parents, "ParentID", "PFirstName", schoolQuestion.ParentID);
+            ViewBag.SchoolID = new SelectList(db.Schools, "SchoolID", "SchoolName", schoolQuestion.SchoolID);
             return View(schoolQuestion);
         }
 
