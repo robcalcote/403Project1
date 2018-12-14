@@ -1,0 +1,44 @@
+﻿@model _403Project1.Models.Parent
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@if (ViewBag.Error != null)
+{
+    <h3 style="color:red">@ViewBag.Error</h3>
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Login</legend>
+        
+
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PEmail) <br />
+            @Html.ValidationMessageFor(model => model.PEmail, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.TextBoxFor(model => model.PEmail)
+        </div>
+
+        <div class="col-form-label">
+            @Html.LabelFor(model => model.PLogin) <br />
+            @Html.ValidationMessageFor(model => model.PLogin, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-form-label">
+            @Html.PasswordFor(model => model.PLogin)
+        </div>
+
+        <input type="submit" value="Submit" />
+
+    </fieldset>
+}
+
+<h2>Don't have an account?</h2>
+@Html.ActionLink("Create","Create", "Parents")
+

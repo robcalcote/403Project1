@@ -8,112 +8,113 @@ using System.Web;
 using System.Web.Mvc;
 using _403Project1.DAL;
 using _403Project1.Models;
+using System.Web.Security;
 
-namespace _403Project1
+namespace _403Project1.Controllers
 {
-    public class SchoolsDescriptionsController : Controller
+    public class ParentsController : Controller
     {
         private LearningDynamicsContext db = new LearningDynamicsContext();
 
-        // GET: SchoolsDescriptions
+        // GET: Parents
         public ActionResult Index()
         {
-          
-
-            return View(db.Schools.ToList());
+            return View(db.Parents.ToList());
         }
 
-        // GET: SchoolsDescriptions/Details/5
+        [Authorize]
+        // GET: Parents/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
-            if (school == null)
+            Parent parent = db.Parents.Find(id);
+            if (parent == null)
             {
                 return HttpNotFound();
             }
-            return View(school);
+            return View(parent);
         }
 
-        // GET: SchoolsDescriptions/Create
+        // GET: Parents/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: SchoolsDescriptions/Create
+        // POST: Parents/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SchoolID,SchoolName,SchoolAddress,SchoolCity,SchoolZIP,SchoolState,DirectorName")] School school)
+        public ActionResult Create([Bind(Include = "ParentID,PFirstName,PLastName,PEmail,PLogin")] Parent parent, bool rememberMe = false)
         {
             if (ModelState.IsValid)
             {
-                db.Schools.Add(school);
+                db.Parents.Add(parent);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                FormsAuthentication.SetAuthCookie(parent.PEmail, rememberMe);
+                return RedirectToAction("Index", "Home");
             }
 
-            return View(school);
+            return View(parent);
         }
 
-        // GET: SchoolsDescriptions/Edit/5
+        // GET: Parents/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
-            if (school == null)
+            Parent parent = db.Parents.Find(id);
+            if (parent == null)
             {
                 return HttpNotFound();
             }
-            return View(school);
+            return View(parent);
         }
 
-        // POST: SchoolsDescriptions/Edit/5
+        // POST: Parents/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SchoolID,SchoolName,SchoolAddress,SchoolCity,SchoolZIP,SchoolState,DirectorName")] School school)
+        public ActionResult Edit([Bind(Include = "ParentID,PFirstName,PLastName,PEmail,PLogin")] Parent parent)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(school).State = EntityState.Modified;
+                db.Entry(parent).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(school);
+            return View(parent);
         }
 
-        // GET: SchoolsDescriptions/Delete/5
+        // GET: Parents/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
-            if (school == null)
+            Parent parent = db.Parents.Find(id);
+            if (parent == null)
             {
                 return HttpNotFound();
             }
-            return View(school);
+            return View(parent);
         }
 
-        // POST: SchoolsDescriptions/Delete/5
+        // POST: Parents/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            School school = db.Schools.Find(id);
-            db.Schools.Remove(school);
+            Parent parent = db.Parents.Find(id);
+            db.Parents.Remove(parent);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

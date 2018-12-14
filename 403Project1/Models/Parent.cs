@@ -32,10 +32,11 @@ namespace _403Project1.Models
         [StringLength(30, ErrorMessage = "Parent Last Name must not exceed 30 characters.")]
         [DisplayName("Parent Last Name")]
         public string PLastName { get; set; }
-
+        
         [Required(ErrorMessage = "A Parent Email is required.")]
         [StringLength(30, ErrorMessage = "Parent Email must not exceed 30 characters.")]
         [DisplayName("Parent Email")]
+        [EmailAddress]
         public string PEmail { get; set; }
 
         [Required(ErrorMessage = "A Parent Login Password is required.")]

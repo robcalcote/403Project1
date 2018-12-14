@@ -1,0 +1,50 @@
+﻿@model _403Project1.Models.Parent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Parent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLogin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ParentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
