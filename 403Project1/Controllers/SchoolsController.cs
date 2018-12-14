@@ -7,6 +7,7 @@ using _403Project1.Models;
 
 namespace _403Project1.Controllers
 {
+    // EVERYTHING TO DO WITH THE 3 SCHOOLS.
     public class SchoolsController : Controller
     {
         // GET: Schools
