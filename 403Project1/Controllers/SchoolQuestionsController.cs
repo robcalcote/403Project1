@@ -16,6 +16,7 @@ namespace _403Project1.Controllers
         private LearningDynamicsContext db = new LearningDynamicsContext();
 
         // GET: SchoolQuestions
+        [Authorize]
         public ActionResult Index()
         {
             var schoolQuestions = db.SchoolQuestions.Include(s => s.parent).Include(s => s.school);
